@@ -1,0 +1,13 @@
+{
+  "name": "gen-wallets",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "bip39": "^2.5.0",
+    "ripple-bip32": "^0.0.3",
+    "ripple-lib": "^1.1.2",
+    "ripple-sign-keypairs": "^1.0.2",
+    "ripplelib": "^1.2.5"
+  }
+}
