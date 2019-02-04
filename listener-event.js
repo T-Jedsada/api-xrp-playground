@@ -15,7 +15,7 @@ api.on('connected', () => {
 });
 
 api.on('ledger', ledger => {
-    console.log(`ledger: ${JSON.stringify(ledger, null , 2)}`)
+    // console.log(`ledger: ${JSON.stringify(ledger, null , 2)}`)
 });
 
 api.on('disconnected', (code) => {
@@ -29,8 +29,17 @@ api.connection.on('transaction', (event) => {
 });
 
 api.connect().then(() => {
-    api.getServerInfo().then(() => {
+    api.getServerInfo().then((info) => {
+        const ledgers = info.completeLedgers.split('-');
         setupListener()
+        api.getTransactions('rKGvjqtaQWrqh7D6QEQH7b1fbfdbotCoBg',
+         {
+            minLedgerVersion: Number(ledgers[0]),
+            maxLedgerVersion: Number(ledgers[1])
+         }
+        ).then(transaction => {
+            console.log(`histories: ${JSON.stringify(transaction, null, 2)}`)
+        });
     })
 }).catch(err => {
     console.log(`error: ${err}`)
