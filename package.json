@@ -4,13 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "bip39": "^2.5.0",
-    "ripple-bip32": "^0.0.3",
+    "dotenv": "^6.2.0",
     "ripple-lib": "^1.1.2",
-    "ripple-sign-keypairs": "^1.0.2",
     "rippled-ws-client": "^1.0.0",
     "rippled-ws-client-sign": "^0.2.0",
-    "ripplelib": "^1.2.5",
     "websocket": "^1.0.28"
   }
 }
